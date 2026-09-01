@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Optional Cloud sync (Google Cloud SQL / Firestore).
+Job_Track_AI - Optional Cloud sync (Google Cloud SQL / Firestore).
 
 This module is entirely OPTIONAL and gated behind settings.enable_cloud_sync.
 It provides the migration target for the hybrid model: local SQLite stays the

@@ -1,4 +1,4 @@
-# Continuation & Resuming — Job_Track_AI
+# Continuation & Resuming - Job_Track_AI
 
 The project is designed so a lost session or exhausted quota never loses work.
 
@@ -11,7 +11,7 @@ The project is designed so a lost session or exhausted quota never loses work.
    - a ready-to-paste **`CONTINUE`** prompt.
 3. Paste that prompt into a fresh Arena AI account. The new session reads
    `PROMPTS.md` (the preserved full spec) and `data/continuation.json` (the build
-   status) to pick up exactly where things left off — no need to re-write the
+   status) to pick up exactly where things left off - no need to re-write the
    specification.
 
 ## The `CONTINUE` keyword
@@ -32,7 +32,7 @@ The project is designed so a lost session or exhausted quota never loses work.
 Restart from it verbatim and you will regenerate the same application.
 
 ## Safe restart checklist
-- `data/continuation.json` — build status (auto-written).
-- `PROMPTS.md` — full spec.
-- `docs/*` — architecture, features, security, dependencies, rebuild.
+- `data/continuation.json` - build status (auto-written).
+- `PROMPTS.md` - full spec.
+- `docs/*` - architecture, features, security, dependencies, rebuild.
 - Git history on `dev`/`main` is the source of truth for what's committed.

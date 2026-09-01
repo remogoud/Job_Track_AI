@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Resume<->Job matching.
+Job_Track_AI - Resume<->Job matching.
 
 Computes a 0..1 relevance score using a pure-Python TF-IDF + keyword overlap
 model (no heavy ML dependency). If scikit-learn is installed it may be swapped

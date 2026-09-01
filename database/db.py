@@ -1,5 +1,5 @@
 """
-Job_Track_AI — SQLite connection + schema initialisation.
+Job_Track_AI - SQLite connection + schema initialisation.
 
 Thread-safe via `check_same_thread=False` + a connection lock, so the Tkinter
 UI and worker threads can share the DB. The path is configurable so a user can

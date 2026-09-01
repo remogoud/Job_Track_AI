@@ -1,13 +1,13 @@
 """
-Job_Track_AI — AI resume adaptation.
+Job_Track_AI - AI resume adaptation.
 
 Rewrites a resume for a target role, producing a structured change log (what
 changed and why) and supporting an approval workflow. The AI provider is
 pluggable:
 
-  * `AdaptorBackend.local_heuristic` — offline rule-based rewriter (works with
+  * `AdaptorBackend.local_heuristic` - offline rule-based rewriter (works with
     no API key; deterministic).
-  * `AdaptorBackend.gemini` — uses Google Gemini via GEMINI_API_KEY when set.
+  * `AdaptorBackend.gemini` - uses Google Gemini via GEMINI_API_KEY when set.
 
 An important design rule: `base_resume` is NEVER mutated. The optimized
 resume lives in `optimized_resume` and only becomes the user's active doc after

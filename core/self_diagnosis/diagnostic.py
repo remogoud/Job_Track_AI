@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Self-diagnosis and repair engine.
+Job_Track_AI - Self-diagnosis and repair engine.
 
 * Watches for exceptions on the main pipeline (a small error collector).
 * Runs a set of health checks and attempts automated fixes.

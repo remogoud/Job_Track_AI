@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Package the project as a downloadable zipped folder.
+Job_Track_AI - Package the project as a downloadable zipped folder.
 
 Creates `<project_root>/dist/Job_Track_AI-<version>.zip` containing the source
 (no .git, no secrets, no build artifacts, no DB data). Use this to keep a local
@@ -23,7 +23,7 @@ EXCLUDE_FILES = {".env", ".env.*", "*.pyc", "*.sqlite", "*.db", "*.sqlite3", "*.
 ALLOW_DIRS = {"config", "core", "database", "security", "gui", "scripts", "docs",
               ".github", "assets", "tests"}
 ALLOW_FILES = {"main.py", "requirements.txt", ".gitignore", ".env.example",
-               "PROMPTS.md", "README.md", "LICENSE"}
+               "PROMPTS.md", "README.md", "LICENSE", "ANTIGRAVITY_PROMPT.md"}
 
 
 def main() -> int:

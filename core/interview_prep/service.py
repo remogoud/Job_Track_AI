@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Interview prep service (persistence + access).
+Job_Track_AI - Interview prep service (persistence + access).
 """
 from __future__ import annotations
 

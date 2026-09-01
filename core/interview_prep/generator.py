@@ -1,11 +1,11 @@
 """
-Job_Track_AI — Interview preparation generator.
+Job_Track_AI - Interview preparation generator.
 
 Extracts role requirements from the job description and produces:
-  * topics             — key areas to study.
-  * key points         — concise talking points per topic.
-  * mock Q&A           — likely interview questions with model answers.
-  * flashcards         — {front, back, repeats} cards for quiz mode.
+  * topics             - key areas to study.
+  * key points         - concise talking points per topic.
+  * mock Q&A           - likely interview questions with model answers.
+  * flashcards         - {front, back, repeats} cards for quiz mode.
 
 Engine is pluggable: local_heuristic (offline) or gemini (if key set).
 """
@@ -151,4 +151,4 @@ class InterviewPrepGenerator:
             raise RuntimeError("GEMINI_API_KEY missing")
         # Build prompt and call Gemini generative API, parse JSON response into
         # InterviewPrepData. Wired for future use; endpoint lazy.
-        raise NotImplementedError("Gemini prep wiring is a TODO — fall back to heuristic.")
+        raise NotImplementedError("Gemini prep wiring is a TODO - fall back to heuristic.")

@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Build the desktop .exe on YOUR Windows machine.
+Job_Track_AI - Build the desktop .exe on YOUR Windows machine.
 
 Usage (on Windows):
     python -m pip install -r requirements.txt

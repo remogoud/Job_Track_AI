@@ -2,15 +2,15 @@
 Job_Track_AI - Push the local repository to your GitHub repo with a PAT.
 
 Usage (Windows):
-    # 1) Create .env and set:
+    # 1) In .env set:
     #      GITHUB_PAT=<your personal access token>
     #      GITHUB_USERNAME=<your github username>
     #      GITHUB_REPO=Job_Track_AI
     # 2) python scripts/push_to_github.py
 
-The script reads the PAT from .env (it never stores the token in the repo)
+The script reads the PAT from .env (or Windows Credential Manager)
 and pushes ALL branches (main, dev, feature/*, hotfix/*) plus tags to your remote.
-It never commits the token.
+It never commits the token and scrubs the token from the local remote URL after pushing.
 """
 from __future__ import annotations
 
@@ -37,38 +37,49 @@ def main() -> int:
     repo = os.getenv("GITHUB_REPO", "Job_Track_AI")
 
     if not pat or not user:
-        print("Missing GITHUB_PAT or GITHUB_USERNAME. Set them in .env.")
+        print("Missing GITHUB_PAT or GITHUB_USERNAME in environment or .env.")
+        print("Push skipped. Once GITHUB_PAT and GITHUB_USERNAME are configured, re-run this script.")
         return 1
 
-    remote_url = f"https://x-access-token:{pat}@github.com/{user}/{repo}.git"
+    auth_remote_url = f"https://x-access-token:{pat}@github.com/{user}/{repo}.git"
+    clean_remote_url = f"https://github.com/{user}/{repo}.git"
 
-    # Replace/ensure the remote uses the token, but never log the URL.
+    # Replace/ensure the remote exists
     try:
         run(["git", "remote", "remove", "origin"])
     except subprocess.CalledProcessError:
-        pass  # ignore if origin doesn't exist yet
+        pass
 
     subprocess.check_call(["git", "remote", "add", "origin", "remote-placeholder"],
                           cwd=str(PROJECT_ROOT))
     subprocess.check_call(
-        ["git", "config", "remote.origin.url", remote_url],
+        ["git", "config", "remote.origin.url", auth_remote_url],
         cwd=str(PROJECT_ROOT))
 
-    # Push all branches + tags.
-    run(["git", "push", "-u", "origin", "main"])
-    run(["git", "push", "-u", "origin", "dev"])
+    try:
+        # Push branches and tags
+        run(["git", "push", "-u", "origin", "main"])
+        run(["git", "push", "-u", "origin", "dev"])
 
-    branches = subprocess.check_output(
-        ["git", "branch", "--format=%(refname:short)"], cwd=str(PROJECT_ROOT),
-        text=True).split()
-    for branch in branches:
-        if branch not in ("main", "dev"):
-            run(["git", "push", "-u", "origin", branch])
+        branches = subprocess.check_output(
+            ["git", "branch", "--format=%(refname:short)"], cwd=str(PROJECT_ROOT),
+            text=True).split()
+        for branch in branches:
+            if branch not in ("main", "dev"):
+                run(["git", "push", "-u", "origin", branch])
 
-    run(["git", "push", "--tags"])
+        run(["git", "push", "--tags"])
+        print(f"\nSuccessfully pushed to https://github.com/{user}/{repo}")
+    finally:
+        # Clean remote URL so token is never preserved locally
+        try:
+            subprocess.check_call(
+                ["git", "config", "remote.origin.url", clean_remote_url],
+                cwd=str(PROJECT_ROOT))
+        except Exception:
+            pass
 
-    print("\nPushed to", f"{user}/{repo}")
-    print("Token was used transiently and is not committed.")
+    print("Token was used transiently and scrubbed from git config.")
     return 0
 
 

@@ -1,4 +1,4 @@
-# Security & Compliance — Job_Track_AI
+# Security & Compliance - Job_Track_AI
 
 ## Secrets handling (the "no secrets in repo" rule)
 
@@ -28,7 +28,7 @@
 
 - User `email` is encrypted at rest with AES-256-GCM (`security/crypto.py`).
   Key derived from `APP_ENCRYPTION_KEY`. Without a key an ephemeral per-session
-  key is used (data won't survive a restart) — always set a real key in `.env`.
+  key is used (data won't survive a restart) - always set a real key in `.env`.
 - Passwords hashed with PBKDF2-HMAC-SHA256, 600,000 iterations, random salt
   (`security/password.py`).
 

@@ -1,5 +1,5 @@
 -- ===========================================================================
--- Job_Track_AI — Database Schema (Hybrid Model core: SQLite)
+-- Job_Track_AI - Database Schema (Hybrid Model core: SQLite)
 -- Matches the approved "3. Database Schema" artifact exactly, with a few
 -- additive indexes/companion fields for calendar sync and follow-ups.
 -- All timestamps are stored as ISO-8601 UTC (YYYY-MM-DDTHH:MM:SSZ).

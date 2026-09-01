@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Resume parser.
+Job_Track_AI - Resume parser.
 
 Extracts sections (contact, summary, skills, experience, education, projects)
 from raw resume text. Supports plain-text resumes and light PDF/docx extraction

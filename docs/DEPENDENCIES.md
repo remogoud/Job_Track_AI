@@ -1,4 +1,4 @@
-# External Dependencies — Job_Track_AI
+# External Dependencies - Job_Track_AI
 
 The app is designed to run **fully locally** with free services. Cloud/optional
 features are opt-in. Below is an explicit, honest list of every external
@@ -7,7 +7,7 @@ dependency and free alternatives.
 ## Runtime (required, free)
 | Component | Where | Cost | Notes |
 |---|---|---|---|
-| Python 3.10+ | — | Free | GUI uses stdlib `tkinter` |
+| Python 3.10+ | - | Free | GUI uses stdlib `tkinter` |
 | SQLite | stdlib | Free | Default local store (offline control) |
 | `requests`, `beautifulsoup4`, `pydantic`, `cryptography`, `python-dateutil` | pip | Free | Core; `cryptography` for AES-GCM |
 

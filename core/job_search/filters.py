@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Search filter model.
+Job_Track_AI - Search filter model.
 
 Encapsulates the user's job-search criteria (country, remote, salary, role,
 keywords) and normalises them into the query shapes used by both API clients

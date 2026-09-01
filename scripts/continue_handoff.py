@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Print the CONTINUE continuation packet.
+Job_Track_AI - Print the CONTINUE continuation packet.
 
 Use this if your Arena AI session ends or your quota is exhausted. It reads the
 latest build status (data/continuation.json) and prints a ready-to-paste
@@ -33,7 +33,7 @@ def main() -> int:
 
     lines = [
         "=" * 70,
-        "JOB_TRACK_AI — CONTINUE PACKET",
+        "JOB_TRACK_AI - CONTINUE PACKET",
         "=" * 70,
         "",
         "MILESTONE:", summary.get("milestone", ""),

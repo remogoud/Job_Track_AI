@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Application submission.
+Job_Track_AI - Application submission.
 
 Supports automated submission via an authenticated session (site login) OR as a
 guest. Credentials are loaded from .env / Windows Credential Manager and are

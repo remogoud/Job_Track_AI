@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Password hashing.
+Job_Track_AI - Password hashing.
 
 Uses PBKDF2-HMAC-SHA256 (stdlib, no external dependency so the .exe stays lean)
 with 600_000 iterations and a random per-password salt. If passlib/bcrypt is

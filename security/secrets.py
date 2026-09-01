@@ -1,13 +1,13 @@
 """
-Job_Track_AI — Secret retrieval.
+Job_Track_AI - Secret retrieval.
 
 Priority order:
-  1. Windows Credential Manager (if available) — most secure on Windows.
+  1. Windows Credential Manager (if available) - most secure on Windows.
   2. Environment variables.
   3. `.env` file (git-ignored).
 
 NEVER hard-code secrets. This module deliberately refuses to log or expose
-secret *values* — only presence/absence booleans.
+secret *values* - only presence/absence booleans.
 """
 from __future__ import annotations
 

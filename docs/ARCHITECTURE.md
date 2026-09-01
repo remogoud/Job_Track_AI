@@ -1,14 +1,14 @@
-# Architecture — Job_Track_AI
+# Architecture - Job_Track_AI
 
 ## Layers
-1. **UI layer** — `gui/` (Tkinter). Thin shell; calls services only.
-2. **Service layer** — `core/<module>/service.py`. Orchestrates the pipeline,
+1. **UI layer** - `gui/` (Tkinter). Thin shell; calls services only.
+2. **Service layer** - `core/<module>/service.py`. Orchestrates the pipeline,
    owns the business rules (77% gate, approval workflow, follow-up scheduling).
-3. **Domain layer** — `database/models.py` dataclasses.
-4. **Data layer** — `database/repository.py` (SQLite) with an optional
+3. **Domain layer** - `database/models.py` dataclasses.
+4. **Data layer** - `database/repository.py` (SQLite) with an optional
    `database/cloud_sync.py` facade for Firestore/Cloud SQL.
-5. **Security layer** — `security/` (secrets, AES-GCM, PBKDF2).
-6. **Config** — `config/settings.py` (immutable dataclass) +
+5. **Security layer** - `security/` (secrets, AES-GCM, PBKDF2).
+6. **Config** - `config/settings.py` (immutable dataclass) +
    `config/config_manager.py` (persisted user preferences).
 
 ## Data flow (search → apply)

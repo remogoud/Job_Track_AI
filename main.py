@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Application entry point.
+Job_Track_AI - Application entry point.
 
 Launches the desktop GUI. Also supports a headless CLI mode for scripting /
 automation / CI sanity checks.

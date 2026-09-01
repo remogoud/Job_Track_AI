@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Tailored cover letter generation.
+Job_Track_AI - Tailored cover letter generation.
 
 Produces a role-specific cover letter in a chosen tone (Formal / Enthusiastic /
 Concise) by blending the user's profile (skills + a highlight) with the job's
@@ -7,8 +7,8 @@ keywords and company. Includes a follow-up paragraph hook so the letter supports
 the follow-up automation feature.
 
 Provider is pluggable:
-  * local_heuristic — offline template engine (always available).
-  * gemini — uses Google Gemini when GEMINI_API_KEY is set, for richer prose.
+  * local_heuristic - offline template engine (always available).
+  * gemini - uses Google Gemini when GEMINI_API_KEY is set, for richer prose.
 """
 from __future__ import annotations
 
@@ -38,7 +38,7 @@ _OPENERS = {
 _BODIES = {
     "Formal": "\n\nMy background in {skills} directly aligns with the requirements of"
               " this role. In my most recent role I delivered significant, quantifiable"
-              " impact — I would welcome the opportunity to discuss how I can bring the"
+              " impact - I would welcome the opportunity to discuss how I can bring the"
               " same rigor and results to {company}.",
     "Enthusiastic": "\n\nI bring hands-on experience with {skills}, and I love rolling up"
                     " my sleeves on hard problems. I thrive in collaborative teams and am"
@@ -51,7 +51,7 @@ _CLOSERS = {
     "Formal": ("\n\nThank you for your time and consideration. I look forward to the"
                " opportunity to speak further.",
                "Sincerely,\n{name}"),
-    "Enthusiastic": ("\n\nThanks so much for considering my application — I would love to"
+    "Enthusiastic": ("\n\nThanks so much for considering my application - I would love to"
                      " chat about how I can help. Talk soon!",
                      "Best regards,\n{name}"),
     "Concise": ("\n\nThank you for your consideration. I am available to discuss further "

@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Domain models (dataclasses mirroring the approved schema).
+Job_Track_AI - Domain models (dataclasses mirroring the approved schema).
 
 These are storage-agnostic: the repository layer maps them to SQLite today and
 can map them to Cloud SQL / Firestore later without touching business logic.

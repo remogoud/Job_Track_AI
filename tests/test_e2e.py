@@ -1,5 +1,5 @@
 """
-Job_Track_AI — End-to-end smoke test of the full pipeline.
+Job_Track_AI - End-to-end smoke test of the full pipeline.
 
 Runs the headless flows in order and asserts each step. Used by the developer
 and replicable in CI. Use a fresh DB to avoid FK collisions:

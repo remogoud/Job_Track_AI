@@ -1,5 +1,5 @@
 """
-Job_Track_AI — AES-256-GCM encryption for sensitive fields (e.g. email).
+Job_Track_AI - AES-256-GCM encryption for sensitive fields (e.g. email).
 
 Keys come exclusively from APP_ENCRYPTION_KEY in .env / Credential Manager.
 If no key is configured, an ephemeral per-session key is derived from the
@@ -27,9 +27,9 @@ def _load_key() -> bytes:
     raw = get_secret("APP_ENCRYPTION_KEY")
     if raw:
         return hashlib.sha256(raw.encode("utf-8")).digest()[:AESGCM_KEYLEN]
-    # Ephemeral fallback (warn loudly — data won't decrypt across restarts).
+    # Ephemeral fallback (warn loudly - data won't decrypt across restarts).
     machine = os.environ.get("COMPUTERNAME", "jobtrack")
-    log.warning("APP_ENCRYPTION_KEY not set — using ephemeral session key. "
+    log.warning("APP_ENCRYPTION_KEY not set - using ephemeral session key. "
                 "Set it in .env for persistent encryption.")
     return hashlib.sha256(f"ephemeral-{machine}-{settings.project_root}".encode()).digest()[:AESGCM_KEYLEN]
 
@@ -53,5 +53,5 @@ def decrypt(payload: str) -> str | None:
         cipher = AESGCM(_load_key())
         return cipher.decrypt(nonce, ct, None).decode("utf-8")
     except Exception:
-        log.exception("Decryption failed — key mismatch or corrupted data.")
+        log.exception("Decryption failed - key mismatch or corrupted data.")
         return None

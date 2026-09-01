@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Cover letter service.
+Job_Track_AI - Cover letter service.
 
 Persists generated cover letters, supports the approval workflow, and schedules
 a follow-up on the linked application. Uses the follow-up date field on the

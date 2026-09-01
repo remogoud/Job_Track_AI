@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Repository (data access layer).
+Job_Track_AI - Repository (data access layer).
 
 Thin mapping from the dataclass models to SQLite. Every method is small and
 self-contained so the same operations can be re-implemented for Cloud SQL /

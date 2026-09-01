@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Application tracker service.
+Job_Track_AI - Application tracker service.
 
 Dashboard aggregation, status management, calendar sync hooks and notification
 triggers. Complements ApplicationSubmitter (which handles the act of applying).

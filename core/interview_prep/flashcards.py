@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Flashcard quiz engine.
+Job_Track_AI - Flashcard quiz engine.
 
 Implements spaced-repetition-style scheduling: cards the user answers wrong
 increase their repeat count and reappear sooner; correct cards fade out. Includes

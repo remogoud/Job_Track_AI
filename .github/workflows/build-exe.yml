@@ -32,9 +32,11 @@ jobs:
           pip install -r requirements.txt
           pip install pyinstaller
 
-      - name: Run smoke tests (headless CLI)
+      - name: Run test suite & smoke tests
         run: |
           python main.py cli diagnose
+          python tests/test_e2e.py
+          python tests/smoke_gui.py
 
       - name: Build EXE with PyInstaller
         run: |

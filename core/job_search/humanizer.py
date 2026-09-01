@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Human-like navigation simulator.
+Job_Track_AI - Human-like navigation simulator.
 
 When a target site is known to run bot detection, the scraper routes through
 this module which inserts realistic delays, scrolls in human steps, and simulates

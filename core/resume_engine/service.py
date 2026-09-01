@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Resume engine service.
+Job_Track_AI - Resume engine service.
 
 High-level orchestrator for the resume pipeline:
   1. parse resume

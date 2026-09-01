@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Base scraper.
+Job_Track_AI - Base scraper.
 
 Provides a common HTTP access path with:
   * polite headers,

@@ -1,4 +1,4 @@
-# PROMPTS.md — Job_Track_AI (Preserved Specification)
+# PROMPTS.md - Job_Track_AI (Preserved Specification)
 
 > **Purpose:** If anything fails, or the build session ends, this file lets you
 > restart from scratch **without re-writing the specification**. It contains the
@@ -79,24 +79,24 @@
 > - Configurable settings for automation speed, human-like navigation, and AI agent integration.
 > - Plan document for local rebuild/debugging.
 >
-> WAIT — do not start building until I provide all artifacts and say **NOW START**.
+> WAIT - do not start building until I provide all artifacts and say **NOW START**.
 
 ---
 
-## 2. Workflow — Job Application Automation (verbatim)
+## 2. Workflow - Job Application Automation (verbatim)
 
-> 1. **Job Search** — User sets filters (country, remote, salary, role). System crawls APIs/websites. Human-like navigation if bot detection present.
-> 2. **Resume Matching** — Resume parsed → job description analyzed. Match score calculated. If ≥77% → proceed; else → discard.
-> 3. **Resume Adaptation** — AI rewrites resume for role. Change log generated. User approves/rejects changes. Optimized resume stored in database.
-> 4. **Cover Letter Generation** — AI drafts tailored cover letter. User approves. Stored in database.
-> 5. **Application Submission** — Automated submission via site login or guest. Tracker updated with status.
-> 6. **Application Tracking** — Dashboard shows applied jobs. Calendar sync for interviews. Notifications for follow-ups.
-> 7. **Interview Preparation** — Extract role requirements. Generate topics, points, mock Q&A. Flashcards/quiz mode enabled.
-> 8. **Agentic Flows** — MCP agents handle resume, cover letter, search. Arena AI supports `CONTINUE` keyword for broken builds. If quota exhausted → provide summary prompt for next account.
-> 9. **Self-Diagnosis** — Monitor errors. Attempt auto-fix. Notify user + provide debug plan.
-> 10. **Voice Assistant Mode** — Optional Jarvis-like voice interaction.
+> 1. **Job Search** - User sets filters (country, remote, salary, role). System crawls APIs/websites. Human-like navigation if bot detection present.
+> 2. **Resume Matching** - Resume parsed → job description analyzed. Match score calculated. If ≥77% → proceed; else → discard.
+> 3. **Resume Adaptation** - AI rewrites resume for role. Change log generated. User approves/rejects changes. Optimized resume stored in database.
+> 4. **Cover Letter Generation** - AI drafts tailored cover letter. User approves. Stored in database.
+> 5. **Application Submission** - Automated submission via site login or guest. Tracker updated with status.
+> 6. **Application Tracking** - Dashboard shows applied jobs. Calendar sync for interviews. Notifications for follow-ups.
+> 7. **Interview Preparation** - Extract role requirements. Generate topics, points, mock Q&A. Flashcards/quiz mode enabled.
+> 8. **Agentic Flows** - MCP agents handle resume, cover letter, search. Arena AI supports `CONTINUE` keyword for broken builds. If quota exhausted → provide summary prompt for next account.
+> 9. **Self-Diagnosis** - Monitor errors. Attempt auto-fix. Notify user + provide debug plan.
+> 10. **Voice Assistant Mode** - Optional Jarvis-like voice interaction.
 >
-> WAIT — do not start building until I provide all artifacts and say **NOW START**.
+> WAIT - do not start building until I provide all artifacts and say **NOW START**.
 
 ---
 
@@ -220,13 +220,13 @@ release notes.
 
 ## 5. Consolidated GitHub / Constraints (verbatim, as re-confirmed)
 
-> 1. **GitHub Push Authentication** — Prepare the repository locally with clean commit history. Do not attempt to push directly. Provide a ready-to-run push script that uses my Personal Access Token (PAT), or a GitHub Actions workflow. I will handle authentication with my own token.
-> 2. **Building a Native .exe** — Do not attempt cross-compilation in Linux. Include both a GitHub Actions workflow using `windows-latest` runner to auto-build the `.exe`, and a step-by-step build script (e.g., PyInstaller) for me to run on my own Windows machine.
-> 3. **Scraping LinkedIn/Indeed/Glassdoor** — Implement both scraping and API paths. Use human-like navigation safeguards (delays, scrolling, click simulation) for scraping. Prefer API integrations where available (LinkedIn Jobs API, Indeed API). Document clearly that scraping carries legal/account risks. Do not commit any credentials.
-> 4. **No Secrets in Repo** — All API keys, credentials, and secrets stored in `.env` files or Windows Credential Manager. Add `.gitignore` rules to exclude sensitive files. Never commit secrets to GitHub.
-> 5. **Database & Storage (Hybrid Model)** — Local SQLite for resumes, cover letters, and application tracking (offline control, safe). Optional Google Cloud SQL/Firestore for scalability and integration with Gemini flows, Calendar, Gmail, Drive. Ensure all secrets externalized into `.env` or Credential Manager.
-> 6. **Deliverables & Continuation** — Provide code prepared for my GitHub repo (`Job_Track_AI`) via my PAT or workflow. Provide downloadable files and a zipped folder for local use. Provide continuation prompts (`CONTINUE`) if session ends or quota is exhausted. Provide documentation and a local rebuild/debug plan.
-> 7. **Prompt Preservation (.md File)** — Create a `PROMPTS.md` file inside the repository that contains the full text of all prompts, the feasibility clarifications and understanding, and the four artifacts (Detailed Prompt, Workflow, Database Schema, Git Strategy).
+> 1. **GitHub Push Authentication** - Prepare the repository locally with clean commit history. Do not attempt to push directly. Provide a ready-to-run push script that uses my Personal Access Token (PAT), or a GitHub Actions workflow. I will handle authentication with my own token.
+> 2. **Building a Native .exe** - Do not attempt cross-compilation in Linux. Include both a GitHub Actions workflow using `windows-latest` runner to auto-build the `.exe`, and a step-by-step build script (e.g., PyInstaller) for me to run on my own Windows machine.
+> 3. **Scraping LinkedIn/Indeed/Glassdoor** - Implement both scraping and API paths. Use human-like navigation safeguards (delays, scrolling, click simulation) for scraping. Prefer API integrations where available (LinkedIn Jobs API, Indeed API). Document clearly that scraping carries legal/account risks. Do not commit any credentials.
+> 4. **No Secrets in Repo** - All API keys, credentials, and secrets stored in `.env` files or Windows Credential Manager. Add `.gitignore` rules to exclude sensitive files. Never commit secrets to GitHub.
+> 5. **Database & Storage (Hybrid Model)** - Local SQLite for resumes, cover letters, and application tracking (offline control, safe). Optional Google Cloud SQL/Firestore for scalability and integration with Gemini flows, Calendar, Gmail, Drive. Ensure all secrets externalized into `.env` or Credential Manager.
+> 6. **Deliverables & Continuation** - Provide code prepared for my GitHub repo (`Job_Track_AI`) via my PAT or workflow. Provide downloadable files and a zipped folder for local use. Provide continuation prompts (`CONTINUE`) if session ends or quota is exhausted. Provide documentation and a local rebuild/debug plan.
+> 7. **Prompt Preservation (.md File)** - Create a `PROMPTS.md` file inside the repository that contains the full text of all prompts, the feasibility clarifications and understanding, and the four artifacts (Detailed Prompt, Workflow, Database Schema, Git Strategy).
 
 ---
 

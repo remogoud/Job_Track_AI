@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Agentic/MCP agents.
+Job_Track_AI - Agentic/MCP agents.
 
 Each agent owns one capability (resume rewriting, cover letter drafting, job
 search filtering) and exposes a `handle(message)` method so an orchestrator can

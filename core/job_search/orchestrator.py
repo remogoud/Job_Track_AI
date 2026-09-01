@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Job search orchestrator.
+Job_Track_AI - Job search orchestrator.
 
 Routes each requested source to its preferred path:
   * API-first (LinkedIn Jobs API, Indeed API) when credentials exist,

@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Central configuration.
+Job_Track_AI - Central configuration.
 
 Loads settings from three sources, in increasing priority order:
   1. Built-in defaults
@@ -125,7 +125,7 @@ class Settings:
         return d
 
     def summarize(self) -> dict[str, Any]:
-        """Safe summary for logging — never includes secret-bearing fields."""
+        """Safe summary for logging - never includes secret-bearing fields."""
         d = self.to_dict()
         return d
 

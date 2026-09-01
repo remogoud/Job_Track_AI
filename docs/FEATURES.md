@@ -1,4 +1,4 @@
-# Feature & Flow Documentation — Job_Track_AI
+# Feature & Flow Documentation - Job_Track_AI
 
 Implements the full "Job Application Automation" workflow. Each numbered flow
 maps to real code below.

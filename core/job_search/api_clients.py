@@ -1,5 +1,5 @@
 """
-Job_Track_AI — API-first job clients (LinkedIn, Indeed).
+Job_Track_AI - API-first job clients (LinkedIn, Indeed).
 
 These are the PREFERRED paths for future-proofing: partner/exposed APIs return
 structured, ToS-compliant payloads and avoid scraping risk. Where a real API
@@ -32,7 +32,7 @@ class LinkedInJobsAPI:
 
     def search(self, filters: SearchFilters) -> list[Job]:
         if not self.available:
-            log.info("LinkedIn API token missing — using simulated results.")
+            log.info("LinkedIn API token missing - using simulated results.")
             return _simulate_jobs("linkedin", filters)
         # Real implementation placeholder: authenticated GET to the Jobs API.
         # headers = {"Authorization": f"Bearer {self.token}"}
@@ -54,7 +54,7 @@ class IndeedJobsAPI:
 
     def search(self, filters: SearchFilters) -> list[Job]:
         if not self.available:
-            log.info("Indeed API key missing — using simulated results.")
+            log.info("Indeed API key missing - using simulated results.")
             return _simulate_jobs("indeed", filters)
         raise NotImplementedError("Wire your Indeed partner API endpoint here. "
                                   "See docs/DEPENDENCIES.md.")

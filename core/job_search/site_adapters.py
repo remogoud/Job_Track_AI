@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Per-site adapters for scraping (human-like) paths.
+Job_Track_AI - Per-site adapters for scraping (human-like) paths.
 
 Each adapter maps a site's page markup into normalized Job objects. The
 `humanize` flag controls whether the Humanizer (delays/scrolls/clicks) is used.

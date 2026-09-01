@@ -1,4 +1,4 @@
-# Local Rebuild & Debugging Plan — Job_Track_AI
+# Local Rebuild & Debugging Plan - Job_Track_AI
 
 This is your step-by-step plan to rebuild from source and debug on your own
 machine. Everything runs locally; no external account is required for the core.
@@ -32,7 +32,7 @@ Optional extras (only if you want them):
 pip install selenium webdriver-manager      # JS scraping / browser submit
 pip install plyer                            # rich desktop notifications
 pip install speech_recognition pyttsx3 sounddevice   # voice
-# GCP / Gemini / Calendar / Gmail / Twilio — install only if configuring them
+# GCP / Gemini / Calendar / Gmail / Twilio - install only if configuring them
 ```
 
 ## 4. Configure secrets
@@ -89,12 +89,12 @@ The app self-reports. `python main.py cli diagnose` runs health checks:
 | `dependencies` | Required libs installed | `pip install -r requirements.txt` |
 
 **When something breaks:**
-1. Run `python main.py cli diagnose` — read the debug plan.
+1. Run `python main.py cli diagnose` - read the debug plan.
 2. Check `data/jobtrack.db` is writable; if corrupt, delete `data/*.db*` (the app
    re-creates the schema). Note: this clears stored jobs/apps.
 3. Check `logs/` for a trace; `core/self_diagnosis` records errors to the
    `system_logs` table too.
-4. If a scraping/API source fails, it won't block the rest — sources fail
+4. If a scraping/API source fails, it won't block the rest - sources fail
    independently and are logged.
 5. If the DB was migrated/updated, verify the schema: `node_modules` no;
    run `python -c "from database import db; print(db.fetchone('select sqlite_version()'))"`.

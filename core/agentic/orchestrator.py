@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Agentic orchestrator + CONTINUE protocol.
+Job_Track_AI - Agentic orchestrator + CONTINUE protocol.
 
 Routes natural-language requests to the MCP-style agents, and implements the
 `CONTINUE` handoff protocol:

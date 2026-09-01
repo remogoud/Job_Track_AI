@@ -1,5 +1,5 @@
 """
-Job_Track_AI — User-facing configuration manager.
+Job_Track_AI - User-facing configuration manager.
 
 Wraps the immutable `Settings` dataclass with load/save operations so the GUI
 can persist runtime preferences (automation speed, toggles, thresholds) to a

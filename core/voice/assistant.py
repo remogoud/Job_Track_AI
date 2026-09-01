@@ -1,5 +1,5 @@
 """
-Job_Track_AI — Optional Jarvis-like voice assistant.
+Job_Track_AI - Optional Jarvis-like voice assistant.
 
 Wraps speech recognition (listen) + text-to-speech (speak) behind a clean
 interface so the core logic is fully testable without audio hardware. Voice

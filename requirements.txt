@@ -1,5 +1,5 @@
 # ===========================================================================
-# Job_Track_AI — Python dependencies
+# Job_Track_AI - Python dependencies
 # Keep this list minimal so the packaged .exe stays lean.
 # ===========================================================================
 
@@ -23,7 +23,7 @@ cryptography>=42.0.0            # AES-GCM email encryption
 # bcrypt>=4.1.0
 
 # --- Cloud (optional) ---------------------------------------------------------
-# google-cloud-sql / firestore / storage — only if you enable GCP sync
+# google-cloud-sql / firestore / storage - only if you enable GCP sync
 # google-cloud-firestore>=2.15.0
 # google-cloud-storage>=2.13.0
 # google-api-python-client>=2.110.0
@@ -36,7 +36,7 @@ cryptography>=42.0.0            # AES-GCM email encryption
 
 # --- GUI / packaging (desktop .exe) --------------------------------------------
 # The app uses the standard-library Tkinter UI. PyInstaller is a BUILD-time tool,
-# not a runtime dependency — see scripts/build_exe_local.py.
+# not a runtime dependency - see scripts/build_exe_local.py.
 # pyinstaller>=6.0.0
 
 # --- Voice (optional Jarvis mode) ----------------------------------------------
