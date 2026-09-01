@@ -1,0 +1,45 @@
+# ===========================================================================
+# Job_Track_AI — Python dependencies
+# Keep this list minimal so the packaged .exe stays lean.
+# ===========================================================================
+
+# --- Core ------------------------------------------------------------------
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+pydantic>=2.6.0
+python-dateutil>=2.8.2
+
+# --- Scraping (human-like navigation) ---------------------------------------
+# Selenium is OPTIONAL and only needed for real JS-heavy scraping. Enable it
+# by installing selenium + a driver, OR use the lightweight requests-based
+# fetchers. It is intentionally commented out of the base .exe build.
+# selenium>=4.18.0
+# webdriver-manager>=4.0.0
+
+# --- Security ----------------------------------------------------------------
+cryptography>=42.0.0            # AES-GCM email encryption
+# passlib + bcrypt for password hashing (optional; a stdlib fallback exists)
+# passlib>=1.7.4
+# bcrypt>=4.1.0
+
+# --- Cloud (optional) ---------------------------------------------------------
+# google-cloud-sql / firestore / storage — only if you enable GCP sync
+# google-cloud-firestore>=2.15.0
+# google-cloud-storage>=2.13.0
+# google-api-python-client>=2.110.0
+# google-auth>=2.28.0
+
+# --- ML / matching ------------------------------------------------------------
+# scikit-learn is optional for enhanced matching; a pure-python TF-IDF fallback
+# ships in matcher.py so the base build stays dependency-light.
+# scikit-learn>=1.4.0
+
+# --- GUI / packaging (desktop .exe) --------------------------------------------
+# The app uses the standard-library Tkinter UI. PyInstaller is a BUILD-time tool,
+# not a runtime dependency — see scripts/build_exe_local.py.
+# pyinstaller>=6.0.0
+
+# --- Voice (optional Jarvis mode) ----------------------------------------------
+# speech_recognition>=3.10.0
+# pyttsx3>=2.90
+# sounddevice>=0.4.6

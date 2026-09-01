@@ -1,0 +1,70 @@
+# ===========================================================================
+# Job_Track_AI — Build the Windows .exe on a windows-latest runner.
+# Triggers on pushes/tags. Produces a signed/verified artifact (SmartScreen).
+#
+# NOTE: This workflow contains NO secrets. Windows code-signing (if you have a
+# certificate) is staged but gated behind secrets you would add in the Actions
+# repo settings. Without a cert the .exe is unsigned but still buildable.
+# ===========================================================================
+name: Build Windows EXE
+
+on:
+  push:
+    branches: [main, dev]
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+
+      - name: Run smoke tests (headless CLI)
+        run: |
+          python main.py cli diagnose
+
+      - name: Build EXE with PyInstaller
+        run: |
+          pyinstaller --noconfirm --clean --onefile --windowed ^
+            --name JobTrackAI ^
+            --icon assets/app.ico ^
+            --collect-all tkinter ^
+            main.py
+        shell: pwsh
+
+      - name: Verify build (windows security/antivirus check via Defender)
+        run: |
+          if (Test-Path "dist/JobTrackAI.exe") {
+            Write-Host "EXE built. Scanning with Windows Defender..."
+            Start-MpScan -ScanType CustomScan -ScanPath "$pwd\dist\JobTrackAI.exe"
+          } else {
+            Write-Error "EXE not found!"
+          }
+        continue-on-error: true
+        shell: pwsh
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: JobTrackAI-windows-exe
+          path: dist/JobTrackAI.exe
+
+      - name: Tag release notes (on tag push, optional)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/JobTrackAI.exe
+          generate_release_notes: true

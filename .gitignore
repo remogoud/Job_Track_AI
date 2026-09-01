@@ -1,0 +1,79 @@
+# ===========================================================================
+# Job_Track_AI — .gitignore
+# NEVER commit secrets. This file is the last line of defence.
+# ===========================================================================
+
+# --- Secrets / credentials (MUST STAY OUT OF REPO) -------------------------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+credentials.json
+token.json
+service_account.json
+client_secret*.json
+firebase-adminsdk*.json
+*.secret
+*.cred
+secrets/
+config/secrets/
+**/*_credentials.json
+
+# --- OS / editor -----------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+*.exe
+*.manifest
+*.spec
+.venv/
+venv/
+env/
+.python-version
+.coverage
+htmlcov/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.tox/
+.nox/
+*.log
+logs/
+
+# --- App runtime data (user data must never be committed) ------------------
+data/
+*.sqlite
+*.sqlite3
+*.db
+database/*.db
+*.db-journal
+*.db-wal
+*.db-shm
+runtime/
+
+# --- Windows Credential / build artifacts -----------------------------------
+*.pdb
+*.dll
+*.lib
+*.obj
+!requirements*.txt
+
+# --- Virtual environments / tools -------------------------------------------
+pip-wheel-metadata/
+*.whl
